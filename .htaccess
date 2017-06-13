@@ -1,0 +1,10 @@
+ErrorDocument 404 http://vote2017.fr
+ErrorDocument 403 http://vote2017.fr
+ErrorDocument 500 http://vote2017.fr
+ErrorDocument 301 http://vote2017.fr
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www.vote2017.fr [NC]
+RewriteRule ^(.*)$ http://vote2017.fr/$1 [L,R=301]
+RewriteRule ^index?$ index.php
